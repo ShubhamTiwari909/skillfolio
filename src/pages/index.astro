@@ -2,12 +2,21 @@
 import Hero from "../components/Hero.astro";
 import { ConfettiFireworks } from "../components/Confetti.tsx";
 import Layout from "../layouts/Layout.astro";
-
-// Welcome to Astro! Wondering what to do next? Check out the Astro documentation at https://docs.astro.build
-// Don't want to use any of this? Delete everything in this file, the `assets`, `components`, and `layouts` directories, and start fresh.
+import { AccordionDemo } from "@/components/Accordion";
+import { CalendarDemo } from "@/components/Calender";
+import { CarouselSize } from "@/components/Carousel";
+import { PaymentTable } from "@/components/PaymentTable";
 ---
 
 <Layout>
 	<Hero />
-	<ConfettiFireworks client:load />
+	<main class="max-w-7xl mx-auto p-10">
+		<ConfettiFireworks client:load />
+		<div class="flex flex-col lg:flex-row justify-between lg:min-h-115 gap-7 lg:gap-14 scroll-mt-16 lg:scroll-mt-20" id="accordion">
+			<AccordionDemo client:load />
+			<CalendarDemo client:load />
+		</div>
+		<CarouselSize client:load />
+		<PaymentTable client:load />
+	</main>
 </Layout>
