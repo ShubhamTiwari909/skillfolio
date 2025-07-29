@@ -5,11 +5,15 @@ import react from '@astrojs/react';
 
 import tailwindcss from '@tailwindcss/vite';
 
+import Sonda from 'sonda/astro';
+
+import partytown from '@astrojs/partytown';
+
 // https://astro.build/config
 export default defineConfig({
-  integrations: [react()],
+  integrations: [react(), Sonda(), partytown()],
 
   vite: {
     plugins: [tailwindcss()]
-  }
+  },
 });

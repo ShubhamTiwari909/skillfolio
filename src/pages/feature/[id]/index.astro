@@ -1,0 +1,36 @@
+---
+import Hero from "../../../components/Hero.astro";
+import { ConfettiFireworks } from "../../../components/Confetti.tsx";
+import Layout from "../../../layouts/Layout.astro";
+import { AccordionDemo } from "@/components/Accordion";
+import { CalendarDemo } from "@/components/Calender";
+import { CarouselSize } from "@/components/Carousel";
+import { PaymentTable } from "@/components/PaymentTable";
+import IframeEmbed from "@/components/IframeEmbed.astro";
+
+export async function getStaticPaths() {
+	const hunderedIds = Array.from({ length: 100 }, (_, i) =>
+		(i + 1).toString(),
+	);
+	return hunderedIds.map((id) => ({
+		params: { id },
+	}));
+}
+---
+
+<Layout>
+	<Hero />
+	<main class="max-w-7xl mx-auto p-10">
+		<ConfettiFireworks client:load />
+		<div
+			class="flex flex-col lg:flex-row justify-between lg:min-h-115 gap-7 lg:gap-14 scroll-mt-16 lg:scroll-mt-20"
+			id="accordion"
+		>
+			<AccordionDemo client:load />
+			<CalendarDemo client:load />
+		</div>
+		<CarouselSize client:load />
+		<IframeEmbed />
+		<PaymentTable client:load />
+	</main>
+</Layout>

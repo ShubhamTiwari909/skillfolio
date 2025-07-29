@@ -1,22 +1,17 @@
 ---
-
+import { YouTube } from 'astro-embed';
 ---
 
 <h2 class="text-3xl font-semibold mb-5">Iframe demo</h2>
 <div
     class="iframe-facade"
-    style="background-image: url('https://img.youtube.com/vi/VIDEO_ID/hqdefault.jpg')"
     id="codepen-iframe"
 >
 </div>
 
 <h2 class="text-3xl font-semibold mb-5">Youtube video demo</h2>
-<div
-    class="iframe-facade"
-    style="background-image: url('https://img.youtube.com/vi/VIDEO_ID/hqdefault.jpg')"
-    id="youtube-iframe"
->
-</div>
+<YouTube id="https://www.youtube.com/embed/kmrZyByO8Qc?si=1Su4lxuE8nP6CiDK" class="w-full h-150 mb-10 !max-w-full" />
+
 
 <style>
     .iframe-facade {
@@ -42,7 +37,6 @@
 </style>
 
 <script>
-    const youtubeContainer: HTMLDivElement | null = document.querySelector("#youtube-iframe");
     const codepenContainer: HTMLDivElement | null = document.querySelector("#codepen-iframe");
     function loadIframe(container: HTMLElement, iframeSrc: string) {
         const iframe = document?.createElement("iframe");
@@ -57,11 +51,9 @@
     }
     const observer = new IntersectionObserver((entries) => {
         if (entries[0].isIntersecting) {
-            loadIframe(youtubeContainer as HTMLElement, "https://www.youtube.com/embed/kmrZyByO8Qc?si=1Su4lxuE8nP6CiDK");
             loadIframe(codepenContainer as HTMLElement, "https://codepen.io/shubhamtiwari909/embed/GgpJebX?default-tab=result&theme-id=dark");
             observer.disconnect();
         }
     }, { rootMargin: "100px" });
-    observer.observe(youtubeContainer as Element);
     observer.observe(codepenContainer as Element);
 </script>

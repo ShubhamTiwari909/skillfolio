@@ -14,10 +14,11 @@ import { ModeToggle } from "@/components/DarkModeSwitch";
 		<meta name="generator" content={Astro.generator} />
 		<title>Astro Basics</title>
 		<script
+			type="text/partytown"
 			is:inline
 			src="https://script.tapfiliate.com/tapfiliate.js"
 			async></script>
-		<script is:inline>
+		<script is:inline type="text/partytown">
 			(function (t, a, p) {
 				t.TapfiliateObject = a;
 				t[a] =
@@ -33,16 +34,17 @@ import { ModeToggle } from "@/components/DarkModeSwitch";
 
 		<!-- Google Optimize -->
 		<script
+			type="text/partytown"
 			is:inline
 			defer
 			src="https://www.googleoptimize.com/optimize.js?id=GTM-TZDSCNR"
 		></script>
 
 		<script
+			type="text/partytown"
 			is:inline
 			src="https://js.sentry-cdn.com/9d003029002f4a56bdb8a7c188cccd15.min.js"
-			crossorigin="anonymous">
-		</script>
+			crossorigin="anonymous"></script>
 		<ClientRouter />
 	</head>
 	<body>
@@ -52,7 +54,7 @@ import { ModeToggle } from "@/components/DarkModeSwitch";
 	</body>
 </html>
 
-<script is:inline>
+<script is:inline type="text/partytown">
 	const getThemePreference = () => {
 		if (
 			typeof localStorage !== "undefined" &&
