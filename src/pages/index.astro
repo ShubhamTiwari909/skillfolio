@@ -6,6 +6,8 @@ import { AccordionDemo } from "@/components/Accordion";
 import { CalendarDemo } from "@/components/Calender";
 import { CarouselSize } from "@/components/Carousel";
 import { PaymentTable } from "@/components/PaymentTable";
+import { Codepen } from "lucide-react";
+import CodepenEmbed from "@/components/CodepenEmbed.astro";
 ---
 
 <Layout>
@@ -17,6 +19,7 @@ import { PaymentTable } from "@/components/PaymentTable";
 			<CalendarDemo client:load />
 		</div>
 		<CarouselSize client:load />
+		<CodepenEmbed />
 		<PaymentTable client:load />
 	</main>
 </Layout>
