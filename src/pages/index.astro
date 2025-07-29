@@ -6,8 +6,7 @@ import { AccordionDemo } from "@/components/Accordion";
 import { CalendarDemo } from "@/components/Calender";
 import { CarouselSize } from "@/components/Carousel";
 import { PaymentTable } from "@/components/PaymentTable";
-import { Codepen } from "lucide-react";
-import CodepenEmbed from "@/components/CodepenEmbed.astro";
+import IframeEmbed from "@/components/IframeEmbed.astro";
 ---
 
 <Layout>
@@ -19,7 +18,7 @@ import CodepenEmbed from "@/components/CodepenEmbed.astro";
 			<CalendarDemo client:load />
 		</div>
 		<CarouselSize client:load />
-		<CodepenEmbed />
+		<IframeEmbed />
 		<PaymentTable client:load />
 	</main>
 </Layout>
