@@ -1,7 +1,7 @@
 ---
 import Header from "../components/Header.astro";
-import { ClientRouter } from 'astro:transitions';
-import '../styles/global.css';
+import { ClientRouter } from "astro:transitions";
+import "../styles/global.css";
 import { ModeToggle } from "@/components/DarkModeSwitch";
 ---
 
@@ -13,6 +13,36 @@ import { ModeToggle } from "@/components/DarkModeSwitch";
 		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
 		<meta name="generator" content={Astro.generator} />
 		<title>Astro Basics</title>
+		<script
+			is:inline
+			src="https://script.tapfiliate.com/tapfiliate.js"
+			async></script>
+		<script is:inline>
+			(function (t, a, p) {
+				t.TapfiliateObject = a;
+				t[a] =
+					t[a] ||
+					function () {
+						(t[a].q = t[a].q || []).push(arguments);
+					};
+			})(window, "tap");
+
+			tap("create", "28553-09fb92", { integration: "javascript" });
+			tap("detect");
+		</script>
+
+		<!-- Google Optimize -->
+		<script
+			is:inline
+			defer
+			src="https://www.googleoptimize.com/optimize.js?id=GTM-TZDSCNR"
+		></script>
+
+		<script
+			is:inline
+			src="https://js.sentry-cdn.com/9d003029002f4a56bdb8a7c188cccd15.min.js"
+			crossorigin="anonymous">
+		</script>
 		<ClientRouter />
 	</head>
 	<body>
@@ -22,23 +52,29 @@ import { ModeToggle } from "@/components/DarkModeSwitch";
 	</body>
 </html>
 
-
-
 <script is:inline>
 	const getThemePreference = () => {
-		if (typeof localStorage !== 'undefined' && localStorage.getItem('theme')) {
-			return localStorage.getItem('theme');
+		if (
+			typeof localStorage !== "undefined" &&
+			localStorage.getItem("theme")
+		) {
+			return localStorage.getItem("theme");
 		}
-		return window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light';
+		return window.matchMedia("(prefers-color-scheme: dark)").matches
+			? "dark"
+			: "light";
 	};
-	const isDark = getThemePreference() === 'dark';
-	document.documentElement.classList[isDark ? 'add' : 'remove']('dark');
+	const isDark = getThemePreference() === "dark";
+	document.documentElement.classList[isDark ? "add" : "remove"]("dark");
 
-	if (typeof localStorage !== 'undefined') {
+	if (typeof localStorage !== "undefined") {
 		const observer = new MutationObserver(() => {
-			const isDark = document.documentElement.classList.contains('dark');
-			localStorage.setItem('theme', isDark ? 'dark' : 'light');
+			const isDark = document.documentElement.classList.contains("dark");
+			localStorage.setItem("theme", isDark ? "dark" : "light");
 		});
-		observer.observe(document.documentElement, { attributes: true, attributeFilter: ['class'] });
+		observer.observe(document.documentElement, {
+			attributes: true,
+			attributeFilter: ["class"],
+		});
 	}
 </script>
