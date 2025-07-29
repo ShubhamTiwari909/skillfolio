@@ -1,11 +1,13 @@
 ---
 import PurpleScribble from "../assets/purple-scribble.svg";
 import DownArrow from "../assets/down-arrow.svg";
+import HeroBg from "../assets/hero-bg.webp";
 import { BoxReveal } from "../components/magicui/box-reveal";
+import { Image } from "astro:assets";
 ---
 
 <section
-    class="w-full flex items-center justify-center min-h-screen overflow-hidden bg-gradient-to-b from-slate-900 to-indigo-900"
+    class="w-full flex items-center justify-center min-h-screen overflow-hidden bg-gradient-to-b from-slate-900 to-indigo-900 relative"
 >
     <!-- Content -->
     <div class="relative z-10 container mx-auto px-4 text-center text-white">
@@ -39,7 +41,7 @@ import { BoxReveal } from "../components/magicui/box-reveal";
                 </p>
             </BoxReveal>
         </div>
-         <a href="https://dynamic-portfolio-black.vercel.app/shubham-v1" target="_blank" rel="noopener noreferrer" class="inline-block px-10 py-3 overflow-hidden text-sm font-semibold transition-all rounded-full group text text-indigo-200 border border-solid border-indigo-300 hover:bg-indigo-800 hover:outline hover:outline-indigo-200 hover:outline-offset-4 hover:text-white hover:-translate-y-1">
+         <a href="https://dynamic-portfolio-black.vercel.app/shubham-v1" target="_blank" rel="noopener noreferrer" class="inline-block px-10 py-3 overflow-hidden text-sm font-semibold transition-all rounded-full group text text-indigo-200 bg-indigo-800 hover:bg-indigo-800 hover:outline hover:outline-indigo-200 hover:outline-offset-4 hover:text-white hover:-translate-y-1">
             Portfolio
         </a>
     </div>
@@ -52,4 +54,6 @@ import { BoxReveal } from "../components/magicui/box-reveal";
            <DownArrow />
         </a>
     </div>
+    <Image src={"https://www.answerconnect.com/assets/dest/images/desktop/_hero/learning-sharing@2x.jpg"} alt="Random Image" fit="cover" priority class="absolute inset-0 object-cover w-full h-full" quality="75" fetchpriority="high" sizes="100vw" inferSize loading="eager" />
+    <div class="absolute inset-0 object-cover w-full h-full bg-slate-900/30"></div>
 </section>
